@@ -1,0 +1,113 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease, color 0.3s ease, backdrop-filter 0.3s ease;
+    box-sizing: border-box;
+}
+
+.navbar.dark-mode {
+    background-color: rgba(15, 14, 14, 0.8);
+    color: #ffffff;
+    backdrop-filter: blur(5px);
+}
+
+.navbar.light-mode {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #0f0e0e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+/* Style the resume link to match the previous h3 */
+.resume-link {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar.dark-mode .resume-link {
+    color: #18c8f9;
+    /* White text in dark mode */
+}
+
+.navbar.light-mode .resume-link {
+    color: #0f0e0e;
+    /* Dark text in light mode */
+}
+
+.resume-link:hover {
+    color: #ff6ec4;
+    /* Purple hover effect, matching other links */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6ec4;
+}
+
+.navbar.dark-mode .nav-links a {
+    color: #ffffff;
+}
+
+.navbar.light-mode .nav-links a {
+    color: #0f0e0e;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.navbar.dark-mode .theme-toggle {
+    color: #ff6ec4;
+}
+
+.navbar.light-mode .theme-toggle {
+    color: #ff6ec4;
+}
+
+.theme-toggle:hover {
+    color: #7b6ba5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .resume-link {
+        font-size: 1.2rem;
+        /* Match the previous h3 size on mobile */
+    }
+}

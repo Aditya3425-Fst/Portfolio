@@ -1,0 +1,189 @@
+.skills-section {
+    padding: 80px 20px;
+    background-color: #0f0e0e;
+    /* Match the dark background from Projects */
+    color: #ffffff;
+    text-align: center;
+}
+
+.skills-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    width: 30%;
+    /* Adjust width for multiple cards */
+    opacity: 0;
+    /* Start invisible for scroll animation */
+    transform: translateY(20px);
+    /* Start slightly below */
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, box-shadow 0.3s ease, scale 0.3s ease;
+    /* Include transitions for hover */
+}
+
+/* Animate the card when visible (scroll animation) */
+.project-card.animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    /* Slide up and scale to normal size */
+    transition-delay: var(--delay);
+    /* Use the delay from data-delay */
+}
+/* Set the delay dynamically using a CSS variable */
+.project-card {
+    --delay: 0ms;
+    /* Default delay */
+}
+
+.project-card[data-delay="0"] {
+    --delay: 0ms;
+}
+
+.project-card[data-delay="200"] {
+    --delay: 200ms;
+}
+
+.project-card[data-delay="400"] {
+    --delay: 400ms;
+}
+
+.project-card[data-delay="600"] {
+    --delay: 600ms;
+}
+
+.project-card[data-delay="800"] {
+    --delay: 800ms;
+}
+
+/* Hover animation */
+.project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    /* Lift and slightly scale up */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    /* Increase shadow for "lifted" effect */
+}
+
+/* Remove gap between Project 4 and Project 5 */
+.project-card.no-gap {
+    margin-right: 0px;
+    /* Remove the right margin (gap) for Project 4 */
+}
+
+/* Ensure the next card (Project 5) follows immediately */
+.project-card.no-gap+.project-card {
+    margin-left: 0;
+    /* Remove the left margin (gap) for Project 5 */
+}
+
+/* Gradient border effect with hover transition */
+.project-image {
+    position: relative;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    /* Initial gradient border */
+    padding: 2px;
+    /* Space for the gradient border */
+    transition: background 0.3s ease;
+    /* Smooth gradient change on hover */
+}
+
+.project-card:hover .project-image {
+    background: linear-gradient(45deg, #ff8c00, #ff0080);
+    /* Change gradient on hover */
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* Inner image rounded corners */
+    display: block;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.github-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #6b5b95;
+    /* Purple color to match theme */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.github-link:hover {
+    color: #7b6ba5;
+    /* Lighter purple on hover */
+}
+
+.github-icon {
+    font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .project-card {
+        width: 48%;
+        /* Two cards per row on medium screens */
+    }
+
+    /* Reset no-gap for medium screens to maintain layout */
+    .project-card.no-gap {
+        margin-right: 20px;
+        /* Restore gap */
+    }
+
+    .project-card.no-gap+.project-card {
+        margin-left: 20px;
+        /* Restore gap */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        width: 100%;
+        /* Full width on smaller screens */
+    }
+
+    /* Reset no-gap for small screens */
+    .project-card.no-gap {
+        margin-right: 0;
+    }
+
+    .project-card.no-gap+.project-card {
+        margin-left: 0;
+    }
+
+    .skills-section h2 {
+        font-size: 2.5rem;
+        margin-left: 10px;
+    }
+}

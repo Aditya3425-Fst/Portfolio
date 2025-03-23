@@ -1,0 +1,328 @@
+/* Reset default styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the root element takes full height */
+html,
+body,
+#root,
+.App {
+  height: 100%;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Global styles for the App container */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Global theme styles */
+.dark-mode {
+  background-color: #0f0e0e;
+  color: #ffffff;
+}
+
+.light-mode {
+  background-color: #f5f5f5;
+  color: #0f0e0e;
+}
+
+/* Global typography */
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+span,
+label,
+input,
+textarea,
+button {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Global section padding */
+section {
+  padding: clamp(40px, 8vh, 80px) clamp(10px, 2vw, 20px);
+}
+
+/* Global container for centering content */
+section>div {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Responsive adjustments for sections */
+section h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: clamp(20px, 4vh, 40px);
+  text-align: left;
+  margin-left: clamp(10px, 2vw, 20px);
+}
+
+/* Flexbox layouts */
+section .home-content,
+section .expertise-container,
+section .contact-container,
+section .coding-profiles,
+section .social-links,
+section .social-icons,
+section .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 20px);
+  justify-content: center;
+}
+
+/* Specific adjustments for Navbar */
+.navbar {
+  padding: clamp(10px, 2vw, 20px) clamp(15px, 3vw, 40px);
+}
+
+.navbar .resume-link {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
+.nav-links a {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+/* Hamburger menu for mobile */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: inherit;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    display: none;
+  }
+
+  .navbar .nav-links.active {
+    display: flex;
+  }
+
+  .navbar .menu-toggle {
+    display: block;
+  }
+}
+
+/* Specific adjustments for Home */
+.home-section .home-content {
+  flex-direction: row;
+  align-items: center;
+}
+
+.home-section .my-photo {
+  width: clamp(100px, 15vw, 150px);
+  height: clamp(100px, 15vw, 150px);
+}
+
+.home-section h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.home-section p {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.home-section .social-links a {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* Specific adjustments for About */
+.expertise-container .expertise-card {
+  width: clamp(250px, 30vw, 300px);
+}
+
+.expertise-card .expertise-icon {
+  font-size: clamp(40px, 5vw, 50px);
+}
+
+.expertise-card h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
+.expertise-card p {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.tech-stack span {
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+}
+
+.coding-profiles-section h3 {
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+}
+
+.coding-profiles a {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+}
+
+/* Specific adjustments for Contact */
+.contact-container {
+  flex-direction: row;
+}
+
+.contact-form {
+  width: 60%;
+}
+
+.contact-details {
+  width: 35%;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: clamp(8px, 1.5vw, 10px);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.send-button {
+  padding: clamp(10px, 1.5vw, 12px);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.info-item h4 {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+}
+
+.info-item p {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.social-icons a {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+/* Responsive adjustments for all sections */
+@media (max-width: 1024px) {
+
+  section .home-content,
+  section .expertise-container,
+  section .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-section .my-photo {
+    margin-left: 0;
+  }
+
+  .home-section .text-content {
+    text-align: center;
+  }
+
+  .contact-form,
+  .contact-details {
+    width: 100%;
+  }
+
+  .expertise-card {
+    width: clamp(300px, 80vw, 400px);
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: clamp(30px, 6vh, 60px) 15px;
+  }
+
+  section h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-left: 10px;
+  }
+
+  .home-section .my-photo {
+    width: clamp(80px, 20vw, 120px);
+    height: clamp(80px, 20vw, 120px);
+  }
+
+  .home-section h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .home-section p {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .expertise-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .coding-profiles {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: clamp(20px, 4vh, 40px) 10px;
+  }
+
+  .home-section .my-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .social-links a {
+    font-size: 1.5rem;
+  }
+
+  .expertise-card {
+    padding: 10px;
+  }
+
+  .coding-profiles-section {
+    margin: 20px 10px 0;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 8px;
+  }
+
+  .send-button {
+    padding: 10px;
+  }
+}

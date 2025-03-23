@@ -1,0 +1,173 @@
+.home-section {
+    position: relative;
+    padding: 80px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.home-section.dark-mode {
+    background-color: #0f0e0e;
+    /* Black background for dark mode */
+    color: #ffffff;
+    /* White text for dark mode */
+    background-image: url('../assets/bg-dark.png');
+    /* Dark mode background image */
+}
+
+.home-section.light-mode {
+    background-color: #ffffff;
+    /* White background for light mode */
+    color: #0f0e0e;
+    /* Dark text for light mode */
+    background-image: url('../assets/bg-light.png');
+    /* Light mode background image */
+}
+
+/* Container for photo and text */
+.home-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Photo styling with more left overlap */
+.my-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 3;
+    margin-left: -400px;
+    transition: border-color 0.3s ease;
+}
+
+.home-section.dark-mode .my-photo {
+    border: 2px solid #ffffff;
+    /* White border in dark mode */
+}
+
+.home-section.light-mode .my-photo {
+    border: 2px solid #0f0e0e;
+    /* Dark border in light mode */
+}
+
+/* Text container */
+.text-content {
+    text-align: left;
+}
+
+/* Text colors */
+.text-light {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.text-dark {
+    color: #0f0e0e;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Bigger text sizes */
+.home-section h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.home-section p {
+    font-size: 1.8rem;
+    margin: 5px 0 10px 0;
+}
+
+/* Typewriter effect with blinking cursor */
+.typewriter {
+    position: relative;
+    display: inline-block;
+}
+
+.typewriter::after {
+    content: '|';
+    position: absolute;
+    right: -10px;
+    animation: blink 0.7s infinite;
+}
+
+.home-section.dark-mode .typewriter::after {
+    color: #ffffff;
+    /* White cursor in dark mode */
+}
+
+.home-section.light-mode .typewriter::after {
+    color: #0f0e0e;
+    /* Dark cursor in light mode */
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Social links with larger icons */
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-right: 0px;
+}
+
+.social-links a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2196F3;
+    /* Blue hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .my-photo {
+        width: 120px;
+        height: 120px;
+        margin-left: 0;
+    }
+
+    .text-content {
+        text-align: center;
+    }
+
+    .home-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-section p {
+        font-size: 1.4rem;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 15px;
+    }
+}

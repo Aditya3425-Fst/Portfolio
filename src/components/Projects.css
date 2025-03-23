@@ -1,0 +1,253 @@
+.projects-section {
+    padding: 80px 20px;
+    background-color: #0f0e0e;
+    /* Updated background color */
+    color: #ffffff;
+    /* White text */
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 20px;
+    /* Match About section alignment */
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    /* Center the timeline */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Vertical line in the center */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #ffffff;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    /* Center the line */
+    margin-left: -1px;
+    opacity: 0;
+    /* Start invisible */
+    transition: opacity 1s ease-in-out;
+    /* Fade in */
+}
+
+/* Animate the line when the timeline is visible */
+.timeline.animate::before {
+    opacity: 1;
+    /* Fade in */
+}
+
+.timeline-entry {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    /* Start invisible */
+    transition: opacity 1s ease-in-out;
+    /* Fade in */
+}
+
+/* Animate the entry when visible */
+.timeline-entry.animate {
+    opacity: 1;
+    /* Fade in */
+}
+
+/* Left side entries (content on the left, date on the right) */
+.timeline-entry.left {
+    left: 0;
+    text-align: right;
+}
+
+/* Right side entries (not used here, but keeping for future) */
+.timeline-entry.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* Timeline content (card) */
+.timeline-content {
+    background-color: #ffffff;
+    /* White card background */
+    color: #000000;
+    /* Black text for contrast */
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    width: 80%;
+    /* Adjust card width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    /* Start invisible */
+    transition: opacity 1s ease-in-out;
+    /* Fade in */
+}
+
+.timeline-entry.left .timeline-content {
+    margin-right: 60px;
+    /* Space for the marker */
+}
+
+.timeline-entry.right .timeline-content {
+    margin-left: 60px;
+    /* Space for the marker */
+}
+
+/* Animate the content when the entry is visible */
+.timeline-entry.animate .timeline-content {
+    opacity: 1;
+    /* Fade in */
+}
+
+.timeline-content h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* Match image style */
+}
+
+.timeline-content .location {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Timeline marker (circle with logo) */
+.timeline-marker {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #6b5b95;
+    /* Purple marker */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    /* Center the marker on the timeline */
+    transform: translate(-50%, -50%);
+    /* Perfectly center the marker */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* Remove any padding that might offset the logo */
+    opacity: 0;
+    /* Start invisible */
+    transition: opacity 1s ease-in-out;
+    /* Fade in */
+}
+
+/* Animate the marker when the entry is visible */
+.timeline-entry.animate .timeline-marker {
+    opacity: 1;
+    /* Fade in */
+}
+
+.timeline-logo {
+    width: 24px;
+    /* Ensure logo fits within the marker */
+    height: 24px;
+    object-fit: contain;
+    /* Ensure logo scales properly */
+    display: block;
+    /* Ensure the image behaves as a block for centering */
+}
+
+/* Timeline date */
+.timeline-date {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #ffffff;
+    font-family: monospace;
+    /* Match the monospace font in the image */
+    opacity: 0;
+    /* Start invisible */
+    transition: opacity 1s ease-in-out;
+    /* Fade in */
+}
+
+.timeline-entry.left .timeline-date {
+    left: calc(50% + 30px);
+    /* Position to the right of the center line */
+}
+
+.timeline-entry.right .timeline-date {
+    right: calc(50% + 30px);
+    /* Position to the left of the center line */
+}
+
+/* Animate the date when the entry is visible */
+.timeline-entry.animate .timeline-date {
+    opacity: 1;
+    /* Fade in */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+        /* Move line to the left on smaller screens */
+    }
+
+    .timeline-entry {
+        width: 100%;
+        padding-left: 60px;
+        /* Space for the line and marker */
+        text-align: left;
+        opacity: 1;
+        /* Ensure visible on smaller screens */
+    }
+
+    .timeline-entry.left,
+    .timeline-entry.right {
+        left: 0;
+    }
+
+    .timeline-entry.left .timeline-content,
+    .timeline-entry.right .timeline-content {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        opacity: 1;
+        /* Ensure visible */
+    }
+
+    .timeline-marker {
+        left: 0;
+        /* Align marker with the left-side line on smaller screens */
+        transform: translate(0, -50%);
+        opacity: 1;
+        /* Ensure visible */
+    }
+
+    .timeline-entry.left .timeline-date,
+    .timeline-entry.right .timeline-date {
+        left: 100px;
+        /* Adjust date position */
+        opacity: 1;
+        /* Ensure visible */
+    }
+
+    .projects-section h2 {
+        font-size: 2.5rem;
+        margin-left: 10px;
+    }
+}
