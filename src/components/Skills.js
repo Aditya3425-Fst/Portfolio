@@ -128,7 +128,7 @@ function Skills() {
             Designed and developed a personal portfolio website using React and CSS, showcasing projects, skills, and contact information with a focus on responsive design and smooth animations.
           </p>
           <a
-            href="https://github.com/yourusername/portfolio-website" // Replace with your GitHub link
+            href="https://github.com/Aditya3425-Fst/Portfolio" // Replace with your GitHub link
             target="_blank"
             rel="noopener noreferrer"
             className="github-link"
